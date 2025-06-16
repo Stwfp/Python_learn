@@ -21,7 +21,7 @@ def add():
     dream = request.form.get("dream")
 
     if dream: # это сон
-        add_entry("🌌 Сон", mood, dream)
+        add_entry("🌌 Dream", mood, dream)
     else:     # обычная запись  
         add_entry(text, mood)
     

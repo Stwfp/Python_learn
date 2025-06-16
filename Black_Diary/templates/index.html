@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Чёрный дневник
+        </title>
+        <style>
+            body { 
+            font-family: monospace;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            }
+
+            .entry { 
+            margin-bottom: 20px;
+            border-bottom: 1px solid#eee;
+            padding: 10px;            
+            }
+            
+            .dream {color: #9e9e9e;}
+        </style>
+    </head>
+    <body>
+        <h1>
+            Добро пожаловать в закрытый клуб. Чёрный дневник к твоим услугам.
+        </h1>
+
+        <!-- Форма для новой записи-->
+         <form action="/add" method="POST">
+            <input type="text" name="text" placeholder="Текст записи"><br>
+            <input type="text" name="text" placeholder="Настроение"><br>
+            <button type="submit">Добавить</button>
+         </form>
+
+         <!-- Список записей-->
+          <div id="entries">
+            {% for entry in entries %}
+                <div class="entry {% if'🌌 Сон' in entry[2] %}dream{% endif %}">
+                    <strong>
+                        {{ entry[1] }}
+                    </strong><br>
+                    {{ entry[2] }}<br>
+                    {% if entry[3] %}<i>
+                        Настроене: {{ entry[3] }}
+                    </i><br>{% endif %}{% if entry[4] %}
+                    <div class="dream">
+                        Сон: {{ entry[4] }}
+                    </div>{% endif %}
+                </div>
+                {% endfor %}
+          </div>
+    </body>
+</html>

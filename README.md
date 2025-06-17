@@ -8,8 +8,8 @@
 ## 🚀 Запуск
 1. **Клонируй репозиторий**:
    ```bash
-   git clone https://github.com/твой-ник/черный-дневник.git
-   cd черный-дневник
+   git clone https://github.com/Stwfp/Python_learn/tree/master
+   cd Black_Diary
    ```
 
 2. **Установи зависимости** (Python 3.10+):
